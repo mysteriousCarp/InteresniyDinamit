@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #clockImage
+        {
+            height: 500px;
+            width: 500px;
+            margin: 0 auto;
+        }
+        body
+        {
+            display: flex;
+            align-items: center;
+            align-content: center;
+            height: 50vh;
+        }
+        #clockText
+        {
+            position: absolute;
+            color: green;
+            font-size: 50px;
+            display: flex;
+            align-content: center;
+            align-items: center;
+            right: 500px;
+        }
+    </style>
+</head>
+<body>
+    <img src="https://i.postimg.cc/RZLLdHhm/image.png" alt="Xyu" id="clockImage">
+
+    <div id="clockText">52</div>
+    <script>
+        i = 10
+        function EndUpdate()
+        {
+            img = document.getElementById("clockImage");
+            img.style.height = 500 + "px";
+            img.style.width = 500 + "px";
+        }
+        function Update()
+        {
+            if (i > 0){
+                img = document.getElementById("clockImage");
+                img.style.height = 510 + "px";
+                img.style.width = 510 + "px";
+                txt = document.getElementById("clockText");
+                txt.textContent = i;
+                setTimeout(EndUpdate, 2);
+                
+            }
+            else
+            {
+                audio = new Audio("rick-astley-never-gonna-give-you-up.mp3");
+                audio.play();
+            }
+            i--;
+        }
+        setInterval(Update, 1000);
+        
+
+
+
+    </script>
+
+</body>
+</html>
